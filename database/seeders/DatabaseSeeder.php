@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
         UserSeeder::class,
         SoalSeeder::class,
         UjianSeeder::class,
-        UjianSoalListSeeder::class
+        UjianSoalListSeeder::class,
+
         ]);
     }
 }

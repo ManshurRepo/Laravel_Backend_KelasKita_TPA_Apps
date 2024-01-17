@@ -13,7 +13,7 @@ class UjianSoalListSeeder extends Seeder
     public function run(): void
     {
         \App\Models\UjianSoalList::factory()
-        ->count(200)
-        ->create();
+            ->count(200)
+            ->create();
     }
 }

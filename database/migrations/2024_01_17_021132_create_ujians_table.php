@@ -22,6 +22,19 @@ return new class extends Migration
             //hasil
             $table->string('hasil')->nullable();
             $table->timestamps();
+
+        // Schema::create('ujians', function (Blueprint $table) {
+        //     $table->id();
+        //     //user_id
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        //     //nilai angka, verbal, dan logika
+        //     $table->integer('nilai_angka')->nullable();
+        //     $table->integer('nilai_verbal')->nullable();
+        //     $table->integer('nilai_logika')->nullable();
+        //     //hasil
+        //     $table->string('hasil')->nullable();
+        //     $table->timestamps();
+
         });
     }
 

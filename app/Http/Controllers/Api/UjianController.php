@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
-
 use App\Http\Controllers\Controller;
 use App\Http\Resources\SoalResource;
+use Illuminate\Http\Request;
 use App\Models\Soal;
 use App\Models\Ujian;
 use App\Models\UjianSoalList;
-use Illuminate\Http\Request;
+
 
 class UjianController extends Controller
 {
@@ -53,7 +53,7 @@ class UjianController extends Controller
     }
 
     //create ujian
-    public function createUjian(Request $request)
+ public function createUjian(Request $request)
     {
         // get 20 soal angka random unique
 
@@ -95,29 +95,6 @@ class UjianController extends Controller
     }
 
     //get list soal by kategori
-    // public function getListSoalByKategori(Request $request)
-    // {
-    //     $ujian = Ujian::where('user_id', $request->user()->id)->first();
-    //     $ujianSoalList = UjianSoalList::where('ujian_id', $ujian->id)->get();
-    //     $ujianSoalListId = [];
-    //     foreach ($ujianSoalList as $soal) {
-    //         array_push($ujianSoalListId, $soal->soal_id);
-    //     }
-
-    //     $soal = Soal::whereIn('id', $ujianSoalListId)->where('kategori', $request->kategori)->get();
-
-    //     // $soalIds = $ujianSoalList->pluck('soal_id');
-
-    //     // dd($soalIds);
-
-    //     // $soal = Soal::whereIn('id', $soalIds)->where('kategori', $request->kategori)->get();
-
-    //     return response()->json([
-    //         'message' => 'Berhasil mendapatkan soal',
-    //         'data' => SoalResource::collection($soal),
-
-    //     ]);
-    // }
     public function getListSoalByKategori(Request $request)
     {
         $ujian = Ujian::where('user_id', $request->user()->id)->first();
@@ -134,8 +111,7 @@ class UjianController extends Controller
         ]);
     }
 
-
-    // jawab soal
+    //jawab soal
     public function jawabSoal(Request $request)
     {
         $validatedData = $request->validate([
@@ -171,3 +147,4 @@ class UjianController extends Controller
         ]);
     }
 }
+

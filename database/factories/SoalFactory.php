@@ -18,12 +18,12 @@ class SoalFactory extends Factory
     {
         return [
             'pertanyaan' => $this->faker->text(),
-            'kategori' => $this->faker->randomElement(['Numeric','Verbal','Logika']),
+            'kategori' => $this->faker->randomElement(['Numeric','Verbal', 'Logika']),
             'jawaban_a' => $this->faker->word(),
             'jawaban_b' => $this->faker->word(),
             'jawaban_c' => $this->faker->word(),
             'jawaban_d' => $this->faker->word(),
-            'kunci' => $this->faker->randomElement(['a','b','c','d']),
+            'kunci' => $this->faker->randomElement(['a', 'b', 'c', 'd']),
         ];
     }
 }

@@ -14,6 +14,6 @@ class Ujian extends Model
         'nilai_angka',
         'nilai_verbal',
         'nilai_logika',
-        'hasil'
+        'hasil',
     ];
 }

@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\StoreSoalRequest;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreSoalRequest;
 use Illuminate\Support\Facades\DB;
 
 class SoalController extends Controller
 {
-     public function index(Request $request)
+    public function index(Request $request)
     {
         // $soals = \App\Models\Soal::paginate(10);
         $soals = DB::table('soals')
@@ -25,10 +25,11 @@ class SoalController extends Controller
         return view('pages.soals.create');
     }
 
+
     public function store(StoreSoalRequest $request)
     {
         $data = $request->all();
         \App\Models\Soal::create($data);
-        return redirect()->route('soal.index')->with('success', 'User successfully created');
+        return redirect()->route('soal.index')->with('success', 'Soal successfully created');
     }
 }

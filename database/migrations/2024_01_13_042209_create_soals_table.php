@@ -25,7 +25,7 @@ return new class extends Migration
             //jawaban_d
             $table->string('jawaban_d');
             //kunci
-            $table->enum('kunci',['a','b','c','d']);
+            $table->enum('kunci', ['a','b','c','d']);
             $table->timestamps();
         });
     }

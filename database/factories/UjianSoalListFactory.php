@@ -17,10 +17,9 @@ class UjianSoalListFactory extends Factory
     public function definition(): array
     {
         return [
-           'ujian_id' => $this->faker->numberBetween(1,10),
-           'soal_id' => $this->faker->numberBetween(1,10),
-           'kebenaran' => $this->faker->boolean(),
-
+            'ujian_id' => $this->faker->numberBetween(1, 10),
+            'soal_id' => $this->faker->numberBetween(1, 10),
+            'kebenaran' => $this->faker->boolean(),
         ];
     }
 }
