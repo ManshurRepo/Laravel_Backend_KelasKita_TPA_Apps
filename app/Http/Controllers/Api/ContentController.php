@@ -10,7 +10,7 @@ class ContentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //get all or by id
         $contents = \App\Models\Content::when($request->id, function ($query, $id) {
@@ -18,9 +18,18 @@ class ContentController extends Controller
         })->get();
 
         return response()->json([
-            'status' => 'succes',
+            'status' => 'success',
             'data' => $contents,
         ]);
+        //get all or by id
+        // $contents = \App\Models\Content::when($request->id, function ($query, $id) {
+        //     return $query->where('id', $id);
+        // })->get();
+
+        // return response()->json([
+        //     'status' => 'succes',
+        //     'data' => $contents,
+        // ]);
     }
 
     /**

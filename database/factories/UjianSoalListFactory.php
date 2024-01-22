@@ -21,5 +21,7 @@ class UjianSoalListFactory extends Factory
             'soal_id' => $this->faker->numberBetween(1, 10),
             'kebenaran' => $this->faker->boolean(),
         ];
+
+
     }
 }
