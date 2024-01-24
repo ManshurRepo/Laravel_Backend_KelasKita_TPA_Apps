@@ -202,7 +202,7 @@ class UjianController extends Controller
             $kategori_field => $nilai,
             $status_field => 'done',
             $timer_field => 0,
-            
+
         ]);
 
         return response()->json([
