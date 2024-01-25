@@ -13,6 +13,6 @@ class SoalSeeder extends Seeder
     public function run(): void
     {
         //seeder for soal
-        \App\Models\Soal::factory(100)->create();
+        \App\Models\Soal::factory(15)->create();
     }
 }

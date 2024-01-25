@@ -179,21 +179,22 @@ class UjianController extends Controller
             return $value->soal->kategori == $kategori;
         });
 
-        //hitung nilai
+        // hitung nilai
+
         $totalBenar = $ujianSoalList->where('kebenaran', true)->count();
         $totalSoal = $ujianSoalList->count();
         $nilai = round(($totalBenar/ $totalSoal) * 100);
 
-        $kategori_field = 'nilai_verbal';
-        $status_field = 'status_verbal';
-        $timer_field = 'timer_verbal';
-        if ($kategori == 'Numeric') {
-            $kategori_field = 'nilai_angka';
-            $status_field = 'status_angka';
-            $timer_field = 'timer_angka';
-        } else if ($kategori == 'Logika') {
+        $kategori_field = 'nilai_angka';
+        $status_field = 'status_angka';
+        $timer_field = 'timer_angka';
+        if ($kategori == 'Verbal') {
+            $kategori_field = 'nilai_verbal';
+            $status_field = 'status_verbal';
+            $timer_field = 'timer_verbal';
+        } if ($kategori == 'Logika') {
             $kategori_field = 'nilai_logika';
-            $status_field = 'nilai_logika';
+            $status_field = 'status_logika';
             $timer_field = 'timer_logika';
         }
 
@@ -205,7 +206,7 @@ class UjianController extends Controller
 
         ]);
 
-        return response()->json([
+     return response()->json([
             'message' => 'Berhasil medapatkan nilai',
             'nilai' => $nilai,
         ], 200);
